@@ -80,6 +80,9 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
   'plan-eng-review-data-model-bias': ['plan-eng-review/**'],
   'plan-review-report':        ['plan-eng-review/**', 'scripts/gen-skill-docs.ts'],
 
+  // /plan-tune (v1 observational)
+  'plan-tune-inspect':         ['plan-tune/**', 'scripts/question-registry.ts', 'scripts/psychographic-signals.ts', 'scripts/one-way-doors.ts', 'bin/gstack-question-log', 'bin/gstack-question-preference', 'bin/gstack-developer-profile'],
+
   // Codex offering verification
   'codex-offered-office-hours':  ['office-hours/**', 'scripts/gen-skill-docs.ts'],
   'codex-offered-ceo-review':    ['plan-ceo-review/**', 'scripts/gen-skill-docs.ts'],
@@ -171,6 +174,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
 
   // Autoplan
   'autoplan-core':  ['autoplan/**', 'plan-ceo-review/**', 'plan-eng-review/**', 'plan-design-review/**'],
+  'autoplan-dual-voice': ['autoplan/**', 'codex/**', 'bin/gstack-codex-probe', 'scripts/resolvers/review.ts', 'scripts/resolvers/design.ts'],
 
   // Skill routing — journey-stage tests (depend on ALL skill descriptions)
   'journey-ideation':       ['*/SKILL.md.tmpl', 'SKILL.md.tmpl', 'scripts/gen-skill-docs.ts'],
@@ -240,6 +244,9 @@ export const E2E_TIERS: Record<string, 'gate' | 'periodic'> = {
   'plan-eng-review-data-model-bias': 'periodic',
   'plan-eng-coverage-audit': 'gate',
   'plan-review-report': 'gate',
+
+  // /plan-tune — gate (core v1 DX promise: plain-English intent routing)
+  'plan-tune-inspect': 'gate',
 
   // Codex offering verification
   'codex-offered-office-hours': 'gate',
@@ -317,6 +324,7 @@ export const E2E_TIERS: Record<string, 'gate' | 'periodic'> = {
 
   // Autoplan — periodic (not yet implemented)
   'autoplan-core': 'periodic',
+  'autoplan-dual-voice': 'periodic',
 
   // Skill routing — periodic (LLM routing is non-deterministic)
   'journey-ideation': 'periodic',
